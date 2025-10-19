@@ -1,16 +1,9 @@
-
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional
-
-class MissionStatus(str, Enum):
-  SCHEDULED = "Scheduled"
-  PENDING = "Pending"
-  IN_PROGRESS = "In progress"
-  ENDED = "Ended"
-
 from .models import Rocket, Mission, RocketStatus, MissionStatus
   self._missions[mission.id] = mission
   return mission
+
 
 
 def get_mission(self, mission_id: str) -> Mission:
