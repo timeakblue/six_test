@@ -7,10 +7,10 @@ Business Logic: Enforces single rocket assignment, mission lifecycle rules
 Status Tracking: Reflects rocket repairs and mission progress
 
 Usage example
-from src.dragon_repo import SpaceXRepository
+'''from src.dragon_repo import SpaceXRepository
 repo = SpaceXRepository()
 rocket = repo.add_rocket("Dragon 1")
-mission = repo.add_mission("Mars Mission")
+mission = repo.add_mission("Mars Mission") '''
 
 Business Rules
 One rocket per mission
