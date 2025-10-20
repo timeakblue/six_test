@@ -11,7 +11,8 @@ Usage example
 from src.dragon_repo import SpaceXRepository
 repo = SpaceXRepository()
 rocket = repo.add_rocket("Dragon 1")
-mission = repo.add_mission("Mars Mission") </pre>
+mission = repo.add_mission("Mars Mission")
+repo.assign_rocket_to_mission(rocket.id, mission.id) </pre>
 
 Business Rules
 One rocket per mission
