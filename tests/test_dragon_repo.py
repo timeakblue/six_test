@@ -2,7 +2,7 @@
 import pytest
 from .dragon_repo import SpaceXRepository
 from .models import RocketStatus, MissionStatus
-#from .exceptions import #(errors) InvalidOperationError, NotFoundError
+from .exceptions import InvalidOperationError, NotFoundError
 
 
 
@@ -61,4 +61,6 @@ def test_change_mission_to_ended_requires_zero_rockets(repo):
   with pytest.raises(InvalidOperationError):
   repo.change_mission_status(m.id, MissionStatus.ENDED)
   # unassign and then end
-  repo.u
+  repo.unassign_rocket_from_mission(r.id)
+  result = repo.change_mission_status(m.id, MissionStatus.ENDED)
+  assert result.status == MissionStatus.ENDED
