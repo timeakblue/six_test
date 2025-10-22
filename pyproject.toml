@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "spacex-dragon-repo"
 version = "1.0.0"
-description = "In-memory library for SpaceX-style rockets and missions"
+description = "in-memory library for SpaceX-style rockets and missions"
 readme = "README.md"
 requires-python = ">=3.6"
 dependencies = []

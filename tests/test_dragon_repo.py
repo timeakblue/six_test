@@ -121,7 +121,7 @@ def test_mission_status_with_in_build_rockets(repo):
     # both should be IN_SPACE after assignment
     assert repo.get_rocket(r1.id).status == RocketStatus.IN_SPACE
     assert repo.get_rocket(r2.id).status == RocketStatus.IN_SPACE
-    # mission should be IN_PROGRESS (no rockets in repair)
+    # mission should be IN_PROGRESS (no repair)
     assert repo.get_mission(m.id).status == MissionStatus.IN_PROGRESS
 
 
@@ -130,7 +130,7 @@ def test_mission_summary_ordering(repo):
     #create missions with different rocket counts
     m1 = repo.add_mission("Alpha")  # 0 rockets
     m2 = repo.add_mission("Beta")   # 2 rockets  
-    m3 = repo.add_mission("Gamma")  # 1 rocket
+    m3 = repo.add_mission("Gamma")  
     r1 = repo.add_rocket("R1")
     r2 = repo.add_rocket("R2")
     r3 = repo.add_rocket("R3")
@@ -141,6 +141,6 @@ def test_mission_summary_ordering(repo):
     summary = repo.get_missions_summary()
     assert len(summary) == 3
     #ashould ordered on rocket count
-    assert summary[0].name == "Beta"    # 2 rockets
-    assert summary[1].name == "Gamma"   # 1 rocket  
-    assert summary[2].name == "Alpha"   # 0 rockets
+    assert summary[0].name == "Beta"    
+    assert summary[1].name == "Gamma"    
+    assert summary[2].name == "Alpha"   

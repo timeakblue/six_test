@@ -4,6 +4,8 @@ from .exceptions import NotFoundError, InvalidOperationError
 
 
 class SpaceXRepository:
+  """In-memory repository for managing SpaceX rockets and missions with automatic status tracking."""
+  
   def __init__(self) -> None:
     self._rockets: Dict[str, Rocket] = {}
     self._missions: Dict[str, Mission] = {}
