@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field
+from typing import List
 from enum import Enum
 import uuid
 from typing import Optional
@@ -29,7 +30,7 @@ class Rocket:
 
 @dataclass
 class Mission:
-  name: str
-  id: str = field(default_factory=lambda: str(uuid.uuid4()))
-  status: MissionStatus = MissionStatus.SCHEDULED
-  rocket_ids: list[str] = field(default_factory=list)
+    name: str
+    id: str = field(default_factory=lambda: str(uuid.uuid4()))
+    status: MissionStatus = MissionStatus.SCHEDULED
+    rocket_ids: List[str] = field(default_factory=list)
